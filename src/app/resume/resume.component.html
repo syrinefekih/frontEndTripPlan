@@ -1,0 +1,29 @@
+<div class="resume">
+    <h2>Your Travel Resume</h2>
+  
+    <div class="flight-details">
+      <div *ngIf="flight">
+        <p>Departure Date: {{ flight.departureDate }}</p>
+        <p>Flight Number: 210</p>
+        <p>Price: {{ flight.price }}</p>
+      </div>
+      <p *ngIf="!flight">No flight information available.</p>
+    </div>
+  
+    <div class="hotel-details">
+      <h3>Hotel Details</h3>
+      <img *ngIf="hotel" [src]="hotel.photoUrl" alt="Hotel Image">
+      <p *ngIf="hotel">Hotel Name: {{ hotel.label }}</p>
+      <p *ngIf="hotel">Price: {{ hotel.price }}</p>
+      <p *ngIf="!hotel">No hotel information available.</p>
+    </div>
+  
+    <div class="activities">
+      <h3>Activities in the Country</h3>
+    </div>
+    <div class="total-cost">
+      <h4>Total Cost</h4>
+      <p>{{ totalCost }}</p>
+    </div>
+    <button (click)="confirmAndNavigate()">Confirm and Proceed</button>
+  </div>

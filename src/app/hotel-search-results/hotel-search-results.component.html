@@ -1,0 +1,23 @@
+<div>
+    <h2>Hotel Search Result</h2>
+  
+    <div *ngIf="resultData && resultData.data && resultData.data.hotels && resultData.data.hotels.length > 0">
+      <div *ngFor="let hotel of resultData.data.hotels.slice(0, 10)" class="hotel-item">
+        <div class="hotel-details">
+          <img [src]="hotel.property.photoUrls[0]" alt="Hotel Image">
+          <div class="info">
+            <h4>{{ hotel.property.name }}</h4>
+            <p>Rating: {{ hotel.property.reviewScore }} ({{ hotel.property.reviewScoreWord }})</p>
+            <p>Price: {{ hotel.property.priceBreakdown.grossPrice.value }} {{ hotel.property.priceBreakdown.grossPrice.currency }}</p>
+            <p>{{ hotel.accessibilityLabel }}</p>
+            <button (click)="saveHotel(hotel)">Save Hotel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="!resultData || !resultData.data || !resultData.data.hotels || resultData.data.hotels.length === 0">
+      <p>No hotel data available</p>
+    </div>
+  </div>
+  

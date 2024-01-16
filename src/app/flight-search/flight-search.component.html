@@ -1,0 +1,35 @@
+<div>
+  <h2>Flight Search Result to Tunisia</h2>
+
+  <table *ngIf="resultData && resultData.data && resultData.data.length > 0" class="flight-table">
+    <thead>
+      <tr>
+        <th>Departure Date</th>
+        <th>Is Cheapest</th>
+        <th>Offset Days</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of resultData.data">
+        <td>{{ flight.departureDate }}</td>
+        <td>{{ flight.isCheapest }}</td>
+        <td>{{ flight.offsetDays }}</td>
+        <td *ngIf="flight.price" class="price-details">
+          <ul>
+            <li><strong>Currency Code:</strong> {{ flight.price.currencyCode }}</li>
+            <li><strong>Units:</strong> {{ flight.price.units }}</li>
+            <li><strong>Nanos:</strong> {{ flight.price.nanos }}</li>
+          </ul>
+        </td>
+        <td>
+          <button (click)="saveFlight(flight)">Save Flight</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!resultData || !resultData.data || resultData.data.length === 0">
+    <p>No flight data available</p>
+  </div>
+</div>

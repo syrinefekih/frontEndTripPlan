@@ -1,0 +1,25 @@
+<div class="result-container">
+  <h2>Result Page</h2>
+  <div class="result-info">
+    <p><strong>Text:</strong> {{ resultData['@text'] }}</p>
+    <p><strong>Confidence:</strong> {{ resultData['@confidence'] }}</p>
+  </div>
+
+  <div *ngIf="resultData.Resources && resultData.Resources.length > 0" class="resources">
+    <h3>Resources</h3>
+    <ul>
+      <li *ngFor="let resource of resultData.Resources" class="resource-item">
+        <p><strong>URI:</strong> {{ resource['@URI'] }}</p>
+        <div>
+          <label for="arrivalDate">Arrival Date:</label>
+          <input type="date" id="arrivalDate" [(ngModel)]="resource.arrivalDate">
+        </div>
+        <div>
+          <label for="departureDate">Departure Date:</label>
+          <input type="date" id="departureDate" [(ngModel)]="resource.departureDate">
+        </div>
+        <button (click)="confirm2(resource)">Confirm</button>
+      </li>
+    </ul>
+  </div>
+</div>

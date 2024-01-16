@@ -1,0 +1,13 @@
+<!-- user-form.component.html -->
+<h1>Welcome to our e-Agency !</h1>
+<h4>Enter your information to proceed</h4>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+    <label for="username" class="form-label">Username:</label>
+    <input type="text" id="username" formControlName="username" class="form-input" />
+  
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="email" formControlName="email" class="form-input" />
+  
+    <button type="submit" [disabled]="userForm.invalid" class="submit-button">Submit</button>
+  </form>
+  

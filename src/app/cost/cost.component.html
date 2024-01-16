@@ -1,0 +1,21 @@
+<div class="cost-details">
+    <h3>Travel Cost Details</h3>
+    <div *ngIf="flight">
+      <h4>Flight Details</h4>
+      <p>Departure: {{ flight.departureAirport }}</p>
+      <p>Arrival: {{ flight.arrivalAirport }}</p>
+      <p>Price: {{ flight.price }}</p>
+    </div>
+    
+    <div *ngIf="hotel">
+      <h4>Hotel Details</h4>
+      <p>Name: {{ hotel.label }}</p>
+      <p>Price: {{ hotel.price }}</p>
+    </div>
+  
+    <div class="total-cost">
+      <h4>Total Cost</h4>
+      <p>{{ totalCost }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,74 @@
+div {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #0055a5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hotel-item {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hotel-details {
+    display: flex;
+    width: 100%;
+}
+
+.hotel-details img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info h4 {
+    margin: 0;
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    align-self: start;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}

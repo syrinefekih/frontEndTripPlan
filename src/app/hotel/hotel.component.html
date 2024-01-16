@@ -1,0 +1,26 @@
+<div>
+    <h2>Hotel Search</h2>
+    
+    <form (ngSubmit)="searchHotels()" #hotelForm="ngForm">
+      <label for="arrivalDate">Arrival Date:</label>
+      <input type="date" id="arrivalDate" name="arrivalDate" [(ngModel)]="searchForm.arrivalDate" required>
+  
+      <label for="departureDate">Departure Date:</label>
+      <input type="date" id="departureDate" name="departureDate" [(ngModel)]="searchForm.departureDate" required>
+  
+      <label for="adults">Adults:</label>
+      <input type="number" id="adults" name="adults" [(ngModel)]="searchForm.adults" required>
+  
+      <label for="roomQty">Room Quantity:</label>
+      <input type="number" id="roomQty" name="roomQty" [(ngModel)]="searchForm.roomQty" required>
+  
+      <button type="submit" [disabled]="hotelForm.invalid">Search Hotels</button>
+    </form>
+  
+    <!-- Display the result here -->
+    <div *ngIf="searchResult">
+      <h3>Search Result:</h3>
+      <pre>{{ searchResult | json }}</pre>
+    </div>
+  </div>
+  
